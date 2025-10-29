@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seoul in 48 Hours</title>
+
+  <!-- Lib CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <!-- ===== Global Header (VisitKorea-like) ===== -->
+  <header class="vk-header" id="siteHeader">
+    <div class="vk-wrap">
+      <a class="vk-logo" href="#"><span>Visit</span>Seoul</a>
+
+      <nav class="vk-nav" aria-label="Primary">
+        <a href="#highlights">See &amp; Do</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#map">Map</a>
+        <a href="#plan">Plan</a>
+      </nav>
+
+      <button class="vk-menu" aria-controls="vkSearch" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+
+    <div class="vk-search" id="vkSearch">
+      <form id="globalSearchForm" role="search" aria-label="Site search">
+        <input id="globalSearch" type="search"
+              placeholder="Search “palace”, “hanok”, “tours”…"
+              autocomplete="off" />
+        <button id="searchBtn" type="submit" aria-label="Search">Search</button>
+      </form>
+
+      <!-- Hotkeys / Hashtags -->
+      <div class="vk-hotkeys" aria-label="Popular searches">
+        <button type="button" data-k="palace">#Palace</button>
+        <button type="button" data-k="hanok">#Hanok</button>
+        <button type="button" data-k="culture">#Culture</button>
+        <button type="button" data-k="night view">#NightView</button>
+        <button type="button" data-k="skyline">#Skyline</button>
+        <button type="button" data-k="hangang">#Hangang</button>
+        <button type="button" data-k="parks">#Parks</button>
+        <button type="button" data-k="cafe">#Café</button>
+        <button type="button" data-k="food">#Foodie</button>
+        <button type="button" data-k="market">#Market</button>
+        <button type="button" data-k="ddp">#DDP</button>
+        <button type="button" data-k="n tower">#LotteTower</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Main Starts ===== -->
+  <main id="main">
+    <!-- Intro Hero (Glide Slider Version) -->
+    <header class="hero section">
+      <h2 data-aos="fade-up">Seoul in 48 Hours</h2>
+      <p data-aos="fade-up" data-aos-delay="120">Two days. One unforgettable city.</p>
+
+      <div class="glide hero-glide" data-aos="fade-up" data-aos-delay="200">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_1.jpg" alt="DDP Sculpture" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_2.jpg" alt="Lotte Tower in Jamsil View" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_3.jpg" alt="Night Views in Korea" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_4.jpg" alt="Traditional Korean Door" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_5.jpg" alt="King Sejong the Great" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_6.jpg" alt="Namsan Tower View" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_7.jpg" alt="DDP" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_8.jpg" alt="Gangnam Style Sculpture" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_9.jpg" alt="Traditional roof tile pattern" />
+            </li>
+
+            <li class="glide__slide">
+              <img src="./assets/images/Intro_10.jpg" alt="Night view of Gwanghwamun Gate" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Highlights (Glide) -->
+    <section id="highlights" class="section" data-aos="fade-up">
+      <h2>Highlights</h2>
+
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+
+            <!-- #1 Gwanghwamun Gate -->
+            <li class="glide__slide highlight-card">
+              <img src="./assets/images/Gwanghwamun Gate.jpg"
+                  alt="Gwanghwamun Gate, Seoul" />
+              <div class="highlight-info">
+                <h3>Gwanghwamun Gate</h3>
+                <p class="addr">161 Sajik-ro, Jongno-gu, Seoul</p>
+                <p class="desc">
+                  The main gate of Gyeongbokgung Palace and a historic symbol of the Joseon Dynasty.
+                </p>
+              </div>
+            </li>
+
+            <!-- #2 Han River -->
+            <li class="glide__slide highlight-card">
+              <img src="./assets/images/Han River Night.jpg"
+                  alt="Han River night view" />
+              <div class="highlight-info">
+                <h3>Han River</h3>
+                <p class="addr">Banpo District, Seoul</p>
+                <p class="desc">
+                  Seoul’s iconic waterfront with cycling paths, date spots, and skyline views.
+                </p>
+              </div>
+            </li>
+
+            <!-- #3 Dongdaemun Design Plaza -->
+            <li class="glide__slide highlight-card">
+              <img src="./assets/images/DDP Seoul architecture.jpg"
+                  alt="DDP Dongdaemun Design Plaza" />
+              <div class="highlight-info">
+                <h3>Dongdaemun Design Plaza (DDP)</h3>
+                <p class="addr">281 Eulji-ro, Jung-gu, Seoul</p>
+                <p class="desc">
+                  A futuristic cultural landmark designed by Zaha Hadid, especially beautiful at night.
+                </p>
+              </div>
+            </li>
+
+            <!-- #4 Cheonggyecheon Billboard -->
+            <li class="glide__slide highlight-card">
+              <img src="./assets/images/Seoul Electronic display board.jpg"
+                  alt="Cheonggyecheon digital billboard" />
+              <div class="highlight-info">
+                <h3>Cheonggyecheon Seoul Electronic Display Board</h3>
+                <p class="addr">Cheonggyecheon-ro, Seoul</p>
+                <p class="desc">
+                  A vibrant LED-lit stream area popular for nighttime walks and city culture.
+                </p>
+              </div>
+            </li>
+
+            <!-- #5 Bukchon Hanok Village -->
+            <li class="glide__slide highlight-card">
+              <img src="./assets/images/Bukchon Hanok Village.jpg"
+                  alt="Bukchon Hanok Village" />
+              <div class="highlight-info">
+                <h3>Bukchon Hanok Village</h3>
+                <p class="addr">Jongno-gu, Seoul</p>
+                <p class="desc">
+                  A traditional Korean village where culture, history, and lifestyle coexist.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+          <button aria-label="previous" data-glide-dir="<">Prev</button>
+          <button aria-label="next" data-glide-dir=">">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery (Lightbox2) -->
+    <section id="gallery" class="section" data-aos="fade-up">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <a href="./assets/images/DDP Seoul architecture.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>DDP</span> · <span class='loc'>Jung-gu</span><br><span class='desc'>Zaha Hadid's Streamlined Landmark</span>"
+           data-tags="#DDP #DesignSeoul #NightArchitecture">
+           <img src="./assets/images/DDP Seoul architecture.jpg" alt="DDP architecture" />
+        </a>
+
+        <a href="./assets/images/Hongdae night street.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Hongdae</span> · <span class='loc'>Mapo-gu</span><br><span class='desc'>Street Performance and Neon</span>"
+           data-tags="#Hongdae #StreetVibes #LiveMusic">
+          <img src="./assets/images/Hongdae night street.jpg" alt="Hongdae night street" />
+        </a>
+
+        <a href="./assets/images/Seoul%20caf%C3%A9%20alley%20Seongsu.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Seongsu</span> · <span class='loc'>Seongdong-gu</span><br><span class='desc'>Cafe Alley</span>"
+           data-tags="#SeongsuCafe #HiddenCafe #LocalVibes">
+          <img src="./assets/images/Seoul café alley Seongsu.jpg" alt="Seongsu café alley" />
+        </a>
+
+        <a href="./assets/images/Seoul Skyline Night.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Seoul Skyline</span> · <span class='loc'>Namsan</span><br><span class='desc'>Seoul Night Skyline</span>"
+           data-tags="#Namsan #NSeoulTower #CityView">
+          <img src="./assets/images/Seoul Skyline Night.jpg" alt="Seoul skyline night" />
+        </a>
+
+        <a href="./assets/images/Gwanghwamun sunset.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Gwanghwamun</span> · <span class='loc'>Jongno-gu</span><br><span class='desc'>Sunset Photo Spot</span>"
+           data-tags="#GwanghwamunSunset #GoldenHour #HistoricSeoul">
+          <img src="./assets/images/Gwanghwamun sunset.jpg" alt="Gwanghwamun sunset" />
+        </a>
+
+        <a href="./assets/images/Han River Night.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Han River</span> · <span class='loc'>Banpo</span><br><span class='desc'>Riverfront Night Ride</span>"
+           data-tags="#Hangang #RiverSide #BikeNight">
+          <img src="./assets/images/Han River Night.jpg" alt="Han River night view" />
+        </a>
+
+        <a href="./assets/images/Bukchon Hanok Village.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Bukchon Hanok</span> · <span class='loc'>Jongno-gu</span><br><span class='desc'>Stroll through traditional hanok alleys</span>"
+           data-tags="#Bukchon #HanokVillage #TraditionWalk">
+          <img src="./assets/images/Bukchon Hanok Village.jpg" alt="Bukchon Hanok Village" />
+        </a>
+
+        <a href="./assets/images/Seoul Electronic display board.jpg" data-lightbox="seoul"
+           data-title="<span class='place'>Cheonggyecheon</span> · <span class='loc'>Cheonggyecheon</span><br><span class='desc'>Cheonggyecheon Seoul Electronic Display</span>"
+           data-tags="#Cheonggyecheon #UrbanStream #CityChill">
+          <img src="./assets/images/Seoul Electronic display board.jpg" alt="Cheonggyecheon" />
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section id="map" class="section" data-aos="fade-up">
+      <h2>Map &amp; Route</h2>
+      <div id="leaflet-map" style="height:320px; border-radius:12px;"></div>
+    </section>
+
+    <!-- Plan -->
+    <section id="plan" class="section" data-aos="fade-up">
+      <h2>48-Hour Plan</h2>
+
+        <h3 class="day-title">📍 Day 1 — Historic Seoul</h3>
+        <ol class="plan">
+          <li>Gwanghwamun Gate &amp; Gyeongbokgung (photos, guard ceremony)</li>
+          <li>Bukchon Hanok Village + Samcheong-dong café</li>
+          <li>Cheonggyecheon stroll → (opt.) Gwangjang Market lunch</li>
+          <li>DDP architecture &amp; night lights</li>
+          <li>Cheonggyecheon LED night view (opt. N Seoul Tower)</li>
+        </ol>
+
+        <h3 class="day-title">🏙️ Day 2 — Modern Seoul</h3>
+        <ol class="plan">
+          <li>Seongsu café street (brunch &amp; design shops)</li>
+          <li>Lotte World Tower (Seoul Sky) &amp; Seokchon Lake</li>
+          <li>Banpo Hangang Park biking/picnic</li>
+          <li>Banpo Bridge fountain → Hongdae street vibes</li>
+        </ol>
+    </section>
+
+    <section class="section" id="libs">
+      <h2>Libraries Used</h2>
+      <ul>
+        <li>Glide.js – slider/carousel</li>
+        <li>Lightbox2 – fullscreen image lightbox</li>
+        <li>Leaflet – interactive map</li>
+        <li>AOS (Animate On Scroll) – scroll animations</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="section">
+    <p><strong>Libraries used:</strong> Glide.js, Lightbox2, Leaflet, AOS</p>
+      <p class="footer-credit">
+      © 2025 Visit Seoul • Designed by Soyeon Sa
+    </p>
+  </footer>
+
+  <!-- Lib JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="./assets/script.js"></script>
+</body>
+</html>
